@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>APi Catalogue - Utility to upload API definition file</title>
+    <link rel="stylesheet" type="text/css" href="/Dollmar/StyleSheets/dollmar.css" />
+</head>
+
+<body bgcolor="#b8d6ca">
+<h2>Fill the form below to upload your API definition file</h2>
+<h3><i>Note: The file you are uploading must be in zip format</i></h3>
+<hr>
+<div style="display:block">
+    <form action="/APICatalogue/import" method="POST" enctype="multipart/form-data">
+        <table>
+            <tr> 
+                <td>API Name:</td> 
+                <td><input type="text" id="api_name" name="api_name" placeholder="Name of your API ..." size="60"></td>
+            </tr>
+            <tr> 
+                <td>API Description:</td> 
+                <td><input type="text" id="api_description" name="api_description" placeholder="Single line description of your API ..." size="60"></td>
+            </tr>
+            <tr> 
+                <td>API Version:</td> 
+                <td><input type="text" id="api_version" name="api_version" placeholder="Version number of your API definition ..." size="60"></td>
+            </tr>
+            <tr> 
+                <td>API Type:</td> 
+                <td>
+                    <select id="api_type" name="api_type">
+                        <option value="REST:OAS3">REST: OAS 3.x</option>
+                        <option value="REST:OAS2/Swagger">REST: OAS 2.x/Swagger</option>
+                        <option value="REST:RAML">REST: RAML</option>
+                        <option value="SOAP:WSDL">SOAP: WSDL</option>
+                        <option value="XML:XSD">XML:XSD</option>
+                        <option value="gRPC:ProtoBuf">gRPC: ProtoBuf</option>
+                    </select>
+                </td>
+            </tr>
+            <tr> 
+                <td>API Usage:</td> 
+                <td>
+                    <select id="api_usage" name="api_usage">
+                        <option value="Public">Public</option>
+                        <option value="Protected">Protected</option>
+                        <option value="Private">Private</option>
+                    </select>
+                </td>
+            </tr>
+            <tr> 
+                <td>API Status:</td> 
+                <td>
+                    <select id="api_status" name="api_status">
+                        <option value="Live">Live</option>
+                        <option value="In-Development">In Development</option>
+                        <option value="Deprecated">Deprecated</option>
+                        <option value="Withdrawn">Withdrawn</option>
+                    </select>
+                </td>
+            </tr>
+            <tr> 
+                <td>API Definition File:</td> 
+                <td><input type="file" id="api_file" name="api_file" accept=".zip"/></td>
+            </tr>
+        </table>
+        <br>
+        <input type="submit" id="buttonUpload" value="Upload" size="60"/>
+        <br>
+    </form>
+</div>
+</body>
+</html>
+

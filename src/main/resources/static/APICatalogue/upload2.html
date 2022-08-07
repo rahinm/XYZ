@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>APi Catalogue - Utility to upload API definition file</title>
+    <link rel="stylesheet" type="text/css" href="/Dollmar/StyleSheets/dollmar.css" />
+</head>
+
+<body>
+<h2>Fill the form below to upload your API definition file</h2>
+<h3><i>Note: The file you are uploading must be in zip format</i></h3>
+<hr>
+<div style="display:block">
+    <form action="/APICatalogue/import" method="post" enctype="multipart/form-data">
+        <label for="api_name">API name: </label>
+        <input type="text" id="api_name" name="api_name" placeholder="Name of your API ...">
+        <br>
+        <label for="api_description">API Description: </label>
+        <input type="text" id="api_description" name="api_description" placeholder="Single line description of your API ...">
+        <br>
+        <label for="api_version">API Version: </label>
+        <input type="text" id="api_version" name="api_version" placeholder="Version number of your API definition file ...">
+        <br>
+        <label for="api_type">API Type: </label>
+        <select id="api_type" name="api_type">
+            <option value="REST:OAS3">REST: OAS 3.x</option>
+            <option value="REST:OAS2/Swagger">REST: OAS 2.x/Swagger</option>
+            <option value="REST:RAML">REST: RAML</option>
+            <option value="SOAP:WSDL">SOAP: WSDL</option>
+            <option value="XML:XSD">XML:XSD</option>
+            <option value="gRPC:ProtoBuf">gRPC: ProtoBuf</option>
+        </select>
+        <br>
+        <label for="api_usage">API Usage: </label>
+        <select id="api_usage" name="api_usage">
+            <option value="Public">Public</option>
+            <option value="Protected">Protected</option>
+            <option value="Private">Private</option>
+        </select>
+        <br>
+        <label for="api_status">API Status: </label>
+        <select id="api_status" name="api_status">
+            <option value="Live">Live</option>
+            <option value="In-Development">In Development</option>
+            <option value="Deprecated">Deprecated</option>
+            <option value="Withdrawn">Withdrawn</option>
+        </select>
+        <br>
+        <label for="api_file">Select a API definition file: </label>
+        <input type="file" id="api_file" name="api_file" accept=".json,.yaml"/>
+        <input type="submit" id="buttonUpload" value="Upload"/>
+        <br>
+    </form>
+</div>
+</body>
+</html>
+
